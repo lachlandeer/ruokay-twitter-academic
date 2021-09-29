@@ -83,14 +83,14 @@ message("Data saved to RDS file: ", file_name)
 
 # Run query #
 message("Running query...")
-# get_all_tweets(
-#         query        = query,
-#         start_tweets = time_start,
-#         end_tweets   = time_end,
-#         file         = file_name,
-#         data_path    = data_path,
-#         n            = n_tweets,
-#         lang         = lang,
-#         bind_tweets  = FALSE
-#     )
+get_all_tweets(
+        query        = query,
+        start_tweets = time_start,
+        end_tweets   = time_end,
+        file         = file_name,
+        data_path    = data_path,
+        n            = 100, #n_tweets,
+        lang         = lang,
+        bind_tweets  = FALSE
+    )
 message("... query successfully executed")
