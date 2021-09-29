@@ -28,9 +28,8 @@ logAll = "2>&1"
 
 rule all:
     input:
-        data = directory(expand("out/data/{iYear}_ruokay", 
-                                    iYear = ALL_YEARS)
-                        )
+        data = expand("out/data/rds/{iYear}_ruokay.rds", 
+                        iYear = ALL_YEARS)
 
 rule get_tweets:
     input:
@@ -38,7 +37,7 @@ rule get_tweets:
         query     = "src/query-specs/tweet_terms.json",
         daterange = "src/query-specs/ruokay_2019.json",
     output:
-        directory("out/data/{iYear}_ruokay")
+        "out/data/rds/{iYear}_ruokay.rds"
     log:
         "logs/get_tweets_{iYear}_ruokay.txt"
     shell:

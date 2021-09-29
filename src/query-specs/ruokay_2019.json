@@ -1,6 +1,6 @@
 {
     "START_DATE": "2019-08-01T00:00:00Z",
     "END_DATE"  : "2019-11-01T00:00:00Z",
-    "DATA_PATH" : "out/data/json/2019_ruokay/",
+    "DATA_PATH" : "out/data/json/2019_ruokay",
     "FILE_NAME" : "out/data/rds/2019_ruokay.rds"
 }
