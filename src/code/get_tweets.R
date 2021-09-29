@@ -89,7 +89,7 @@ get_all_tweets(
         end_tweets   = time_end,
         file         = file_name,
         data_path    = data_path,
-        n            = 100, #n_tweets,
+        n            = n_tweets,
         lang         = lang,
         bind_tweets  = FALSE
     )
