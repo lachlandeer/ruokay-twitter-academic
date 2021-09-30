@@ -8,6 +8,7 @@
 # --- Dictionaries --- #
 
 # ALL_YEARS = ["2019"]
+PRE_POST = ["preruokay", "ruokay"]
 
 ALL_YEARS = ["2009",
              "2010",
@@ -31,18 +32,19 @@ logAll = "2>&1"
 
 rule all:
     input:
-        data = expand("out/data/rds/{iYear}_ruokay.rds", 
-                        iYear = ALL_YEARS)
+        data = expand("out/data/rds/{iYear}_{iPeriod}.rds", 
+                        iYear = ALL_YEARS,
+                        iPeriod = PRE_POST)
 
 rule get_tweets:
     input:
         script    = "src/code/get_tweets.R",
         query     = "src/query-specs/tweet_terms.json",
-        daterange = "src/query-specs/ruokay_2019.json",
+        daterange = "src/query-specs/{iPeriod}_2019.json",
     output:
-        "out/data/rds/{iYear}_ruokay.rds"
+        "out/data/rds/{iYear}_{iPeriod}.rds"
     log:
-        "logs/get_tweets_{iYear}_ruokay.txt"
+        "logs/get_tweets_{iYear}_{iPeriod}.txt"
     shell:
         "{runR} {input.script} \
             --query {input.query} \

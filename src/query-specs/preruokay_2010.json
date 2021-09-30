@@ -1,0 +1,6 @@
+{
+    "START_DATE": "2009-11-01T00:00:00Z",
+    "END_DATE"  : "2010-08-01T00:00:00Z",
+    "DATA_PATH" : "out/data/json/2010_preruokay",
+    "FILE_NAME" : "out/data/rds/2010_preruokay.rds"
+}
