@@ -38,7 +38,7 @@ rule get_tweets:
     input:
         script    = "src/code/get_tweets.R",
         query     = "src/query-specs/tweet_terms.json",
-        daterange = "src/query-specs/ruokay_2019.json",
+        daterange = "src/query-specs/ruokay_{iYear}.json",
     output:
         "out/data/rds/{iYear}_ruokay.rds"
     log:
