@@ -61,7 +61,7 @@ time_range_json   <- fromJSON(file = opt$daterange)
 # Unpack search json #
 query <- search_terms_json$SEARCH_TERMS
 lang <- search_terms_json$LANG
-n_tweets <- search_terms_json$NTWEETS
+# n_tweets <- search_terms_json$NTWEETS
 
 # Unpack daterange json #
 time_start <- time_range_json$START_DATE
@@ -73,7 +73,7 @@ file_name  <- time_range_json$FILE_NAME
 message("Information on the search terms passed to Twitter API:")
 message("query is: ", query)
 message("Language restriction: ", lang)
-message("Max number of tweets: ", n_tweets)
+# message("Max number of tweets: ", n_tweets)
 message("Start date: ", time_start)
 message("End date: ", time_end)
 message("Data JSONs saved to path: ", data_path)
