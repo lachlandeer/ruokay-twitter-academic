@@ -40,7 +40,7 @@ rule get_tweets:
     input:
         script    = "src/code/get_tweets.R",
         query     = "src/query-specs/tweet_terms.json",
-        daterange = "src/query-specs/{iPeriod}_2019.json",
+        daterange = "src/query-specs/{iPeriod}_{iYear}.json",
     output:
         "out/data/rds/{iYear}_{iPeriod}.rds"
     log:
