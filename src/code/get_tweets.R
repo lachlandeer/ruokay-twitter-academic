@@ -8,7 +8,6 @@
 #' The search query should be in a JSON file with the following fields:
 #'  'SEARCH_TERMS': what words and hashtags to collect (example: '#ruokay')
 #'  'LANG': the language of the tweets the user wants returned (example: 'en')
-#'  'NTWEETS': the max number of tweets to be returned (example: 1e3)
 #' 
 #' The date ranges should be specified in a separate JSON file with the following fields:
 #'  START DATE: the date to start collecting, (example: 2019-08-01T00:00:00Z)
@@ -89,7 +88,7 @@ get_all_tweets(
         end_tweets   = time_end,
         file         = file_name,
         data_path    = data_path,
-        n            = n_tweets,
+        n            = Inf, # n_tweets,
         lang         = lang,
         bind_tweets  = FALSE
     )
