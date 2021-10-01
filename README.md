@@ -83,7 +83,7 @@ Now we will install the necessary packages (and their precise versions) which ar
 snakemake --cores 1 renv_restore
 ```
 
-This will install all the packages we need. It may take a while.
+This will install all the packages we need.
 
 ## Running the Workflow
 
@@ -98,8 +98,9 @@ For more details see the documentation of the function `set_bearer()` from the `
 To run the project, enter the following into the terminal:
 
 ``` bash
-snakemake --cores 1 all
+snakemake --cores 1 --keep-going all
 ```
 
 This will run through the pipeline and collect all data for the project.
-Notice you may get constrained by Twitter's API limits - thus you might need to run the workflow multiple times over multiple months, adjusting the `ALL_YEARS` list in the `Snakefile`.
+Notice you may get constrained by Twitter's API limits. 
+If this happens wait an hour or so, and re-run the workflow to pick up from where it left off.
